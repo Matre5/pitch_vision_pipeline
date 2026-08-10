@@ -1,4 +1,5 @@
 from ultralytics import YOLO
+import csv
 
 model = YOLO("yolo26n.pt")
 results = model.track(
@@ -10,6 +11,12 @@ results = model.track(
     save=True,
     project="outputs",
     name="tracking_test_BSrt_Conf",
-    verbose=False
-    
+    verbose=False,
+    device=0,
+    stream=True
 )
+
+header = 
+
+with open("player_info.csv", "w", newline=" ", encoding="utf-8") as file:
+    writer = csv.writer(file)
