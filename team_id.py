@@ -40,6 +40,12 @@ with open("data/track_info.csv", "r") as file:
             current_frame_num = frame_num
             
         x1, y1, x2, y2 = int(row['x1']), int(row['y1']), int(row['x2']), int(row['y2'])
+        
+        torso = get_torso(current_frame_img, x1, y1, x2, y2)
+        hue = get_dominant_hue(torso)
+        
+        if hue is not None:
+            hue_data.append((int(row['track_id']), hue))
 
             
     
