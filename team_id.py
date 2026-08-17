@@ -16,7 +16,7 @@ def get_dominant_hue(torso_crop):
     hsv = cv2.cvtColor(torso_crop, cv2.COLOR_BGR2HSV)
     return np.mean(hsv[:, :, 0])
 
-cap = cv2.VideoCapture("data/worldcup_clip_trimmed.mp4")
+cap = cv2.VideoCapture("data/worldcup_clip_final.mp4")
 
 hue_data = []
 

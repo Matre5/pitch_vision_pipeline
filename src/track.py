@@ -3,7 +3,7 @@ import csv
 
 model = YOLO("yolo26n.pt")
 results = model.track(
-    source="data/worldcup_clip_trimmed.mp4",
+    source="data/worldcup_clip_final.mp4",
     tracker="botsort.yaml",
     imgsz=960,
     conf=0.4,
@@ -18,7 +18,7 @@ results = model.track(
 
 header = ['frame', 'track_id', 'x1', 'y1', 'x2', 'y2']
 
-with open("track_info.csv", "w", newline="", encoding="utf-8") as file:
+with open("data/track_info.csv", "w", newline="", encoding="utf-8") as file:
     writer = csv.writer(file)
     
     writer.writerow(header)
